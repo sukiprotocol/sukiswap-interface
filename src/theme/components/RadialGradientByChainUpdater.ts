@@ -31,7 +31,8 @@ function setDefaultBackground(backgroundRadialGradientElement: HTMLElement, dark
   setBackground(initialStyles)
   const defaultLightGradient =
     'radial-gradient(100% 100% at 50% 0%, rgba(183, 252, 231, 0.51) 0%, rgba(255, 255, 255, 0) 100%), #FFFFFF'
-  const defaultDarkGradient = 'linear-gradient(180deg, #202738 0%, #070816 100%)'
+  const defaultDarkGradient =
+    'radial-gradient(100% 100% at 50% 0%, rgba(98, 104, 242, 0.2) 0%, rgba(76, 57, 248, 0.08) 55%, rgba(0, 0, 0, 0) 100%), #0A0C11'
   backgroundRadialGradientElement.style.background = darkMode ? defaultDarkGradient : defaultLightGradient
 }
 
@@ -71,7 +72,7 @@ export default function RadialGradientByChainUpdater(): null {
         const optimismLightGradient =
           'radial-gradient(100% 100% at 50% 0%, rgba(255, 251, 242, 0.8) 0%, rgba(255, 244, 249, 0.6958) 50.52%, rgba(255, 255, 255, 0) 100%), #FFFFFF'
         const optimismDarkGradient =
-          'radial-gradient(100% 100% at 50% 0%, rgba(62, 46, 56, 0.8) 0%, rgba(44, 31, 45, 0.6958) 50.52%, rgba(31, 33, 40, 0) 100%), #0D0E0E'
+          'radial-gradient(100% 100% at 50% 0%, rgba(62, 46, 56, 0.8) 0%, rgba(44, 31, 45, 0.6958) 55%, rgba(31, 33, 40, 0) 100%), #0A0C11'
         backgroundRadialGradientElement.style.background = darkMode ? optimismDarkGradient : optimismLightGradient
         break
       }
@@ -81,7 +82,7 @@ export default function RadialGradientByChainUpdater(): null {
         const polygonLightGradient =
           'radial-gradient(100% 100% at 50% 0%, rgba(130, 71, 229, 0.2) 0%, rgba(200, 168, 255, 0.05) 52.6%, rgba(0, 0, 0, 0) 100%), #FFFFFF'
         const polygonDarkGradient =
-          'radial-gradient(100% 100% at 50% 0%, rgba(130, 71, 229, 0.2) 0%, rgba(200, 168, 255, 0.05) 52.6%, rgba(0, 0, 0, 0) 100%), #0D0E0E'
+          'radial-gradient(100% 100% at 50% 0%, rgba(130, 71, 229, 0.2) 0%, rgba(200, 168, 255, 0.05) 55%, rgba(0, 0, 0, 0) 100%), #0A0C11'
         backgroundRadialGradientElement.style.background = darkMode ? polygonDarkGradient : polygonLightGradient
         break
       }
@@ -98,9 +99,9 @@ export default function RadialGradientByChainUpdater(): null {
       case ChainId.BNB: {
         setBackground(backgroundResetStyles)
         const bscLightGradient =
-          'radial-gradient(100% 100% at 50% 0%, rgba(242 , 186, 8, 0.1) 0%, rgba(238, 182, 6, 0.08) 50%, rgba(140, 185, 11, 0) 100%), #FFFFFF'
+          'radial-gradient(100% 100% at 50% 0%, rgba(242 , 186, 8, 0.1) 0%, rgba(238, 182, 6, 0.08) 55%, rgba(140, 185, 11, 0) 100%), #FFFFFF'
         const bscDarkGradient =
-          'radial-gradient(100% 100% at 50% 0%, rgba(169, 132, 17, 0.1) 0%, rgba(128, 100, 14, 0.08) 50%, rgba(140, 185, 11, 0) 100%), #0D0E0E'
+          'radial-gradient(100% 100% at 50% 0%, rgba(169, 132, 17, 0.1) 0%, rgba(128, 100, 14, 0.08) 55%, rgba(140, 185, 11, 0) 100%), #0A0C11'
         backgroundRadialGradientElement.style.background = darkMode ? bscDarkGradient : bscLightGradient
         break
       }
@@ -109,7 +110,7 @@ export default function RadialGradientByChainUpdater(): null {
         const avaxLightGradient =
           'radial-gradient(100% 100% at 50% 0%, rgba(255, 251, 242, 0.8) 0%, rgba(255, 244, 249, 0.6958) 50.52%, rgba(255, 255, 255, 0) 100%), #FFFFFF'
         const avaxDarkGradient =
-          'radial-gradient(100% 100% at 50% 0%, rgba(62, 46, 56, 0.8) 0%, rgba(44, 31, 45, 0.6958) 50.52%, rgba(31, 33, 40, 0) 100%), #0D0E0E'
+          'radial-gradient(100% 100% at 50% 0%, rgba(62, 46, 56, 0.8) 0%, rgba(44, 31, 45, 0.6958) 50.52%, rgba(31, 33, 40, 0) 100%), #0A0C11'
         backgroundRadialGradientElement.style.background = darkMode ? avaxDarkGradient : avaxLightGradient
         break
       }
@@ -119,7 +120,7 @@ export default function RadialGradientByChainUpdater(): null {
         const baseLightGradient =
           'radial-gradient(100% 100% at 50% 0%, rgba(0, 82, 255, 0.20) 0%, rgba(0, 82, 255, 0.08) 40.0%, rgba(252, 255, 82, 0.00) 100%), rgb(255, 255, 255)'
         const baseDarkGradient =
-          'radial-gradient(100% 100% at 50% 0%, rgba(10, 41, 75, 0.7) 0%, rgba(0, 82, 255, .1) 40%, rgba(0, 82, 255, 0) 100%), rgb(13, 14, 14)'
+          'radial-gradient(100% 100% at 50% 0%, rgba(15, 24, 43, 0.8) 0%, rgba(13, 20, 39, 0.7) 50.52%, rgba(11, 82, 255, 0.01) 100%), #0A0C11'
         backgroundRadialGradientElement.style.background = darkMode ? baseDarkGradient : baseLightGradient
         break
       }
