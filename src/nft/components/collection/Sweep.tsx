@@ -22,7 +22,7 @@ const SweepContainer = styled.div`
   justify-content: space-between;
   background: linear-gradient(${({ theme }) => theme.backgroundSurface}, ${({ theme }) => theme.backgroundSurface})
       padding-box,
-    linear-gradient(to right, #2794AA, #0BA878) border-box;
+    linear-gradient(to right, #2794aa, #0ba878) border-box;
   border: 2px solid transparent;
 `
 

@@ -1,4 +1,4 @@
-import styled from 'styled-components/macro'
+import styled from 'styled-components'
 import { BREAKPOINTS } from 'theme'
 
 import baseLogo from './images/base_logo.svg'

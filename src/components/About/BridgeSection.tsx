@@ -1,4 +1,4 @@
-import styled from 'styled-components/macro'
+import styled from 'styled-components'
 import { BREAKPOINTS } from 'theme'
 
 import networkImg from './images/network.svg'

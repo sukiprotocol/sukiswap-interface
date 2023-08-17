@@ -7,10 +7,10 @@ import { BoxProps } from '../../nft/components/Box'
 
 // Gradient with a fallback to solid color.
 const Gradient = styled.div`
-  color: #2794AA;
+  color: #2794aa;
 
   @supports (-webkit-background-clip: text) and (-webkit-text-fill-color: transparent) {
-    background-image: linear-gradient(91.39deg, #2794AA -101.76%, #0BA878 101.76%);
+    background-image: linear-gradient(91.39deg, #2794aa -101.76%, #0ba878 101.76%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
