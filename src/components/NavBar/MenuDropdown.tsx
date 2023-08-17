@@ -1,17 +1,19 @@
 import { t, Trans } from '@lingui/macro'
 import { InterfaceElementName } from '@uniswap/analytics-events'
-import FeatureFlagModal from 'components/FeatureFlagModal/FeatureFlagModal'
+// import FeatureFlagModal from 'components/FeatureFlagModal/FeatureFlagModal'
 import { PrivacyPolicyModal } from 'components/PrivacyPolicy'
 import { useOnClickOutside } from 'hooks/useOnClickOutside'
 import { Box } from 'nft/components/Box'
 import { Column, Row } from 'nft/components/Flex'
 import {
   BarChartIcon,
+  BridgeIcon,
   DiscordIconMenu,
   EllipsisIcon,
   GithubIconMenu,
   GovernanceIcon,
   PoolIcon,
+  TelegramIconMenu,
   TwitterIconMenu,
 } from 'nft/components/icons'
 import { body, bodySmall } from 'nft/css/common.css'
@@ -20,10 +22,10 @@ import { ReactNode, useReducer, useRef } from 'react'
 import { NavLink, NavLinkProps } from 'react-router-dom'
 import { useToggleModal } from 'state/application/hooks'
 import styled, { useTheme } from 'styled-components'
-import { isDevelopmentEnv, isStagingEnv } from 'utils/env'
+// import { isDevelopmentEnv, isStagingEnv } from 'utils/env'
 import { openDownloadApp } from 'utils/openDownloadApp'
 
-import { ReactComponent as AppleLogo } from '../../assets/svg/apple_logo.svg'
+// import { ReactComponent as AppleLogo } from '../../assets/svg/apple_logo.svg'
 import { ApplicationModal } from '../../state/application/reducer'
 import * as styles from './MenuDropdown.css'
 import { NavDropdown } from './NavDropdown'
@@ -125,7 +127,7 @@ export const MenuDropdown = () => {
   const theme = useTheme()
   const [isOpen, toggleOpen] = useReducer((s) => !s, false)
   const togglePrivacyPolicy = useToggleModal(ApplicationModal.PRIVACY_POLICY)
-  const openFeatureFlagsModal = useToggleModal(ApplicationModal.FEATURE_FLAGS)
+  // const openFeatureFlagsModal = useToggleModal(ApplicationModal.FEATURE_FLAGS)
   const ref = useRef<HTMLDivElement>(null)
   useOnClickOutside(ref, isOpen ? toggleOpen : undefined)
 
@@ -159,10 +161,10 @@ export const MenuDropdown = () => {
                 >
                   <PrimaryMenuRow close={toggleOpen}>
                     <Icon>
-                      <AppleLogo width="24px" height="24px" fill={theme.textPrimary} />
+                      <BridgeIcon width="24px" height="24px" fill={theme.textPrimary} />
                     </Icon>
                     <PrimaryMenuRow.Text>
-                      <Trans>Download Uniswap Wallet</Trans>
+                      <Trans>Bridge</Trans>
                     </PrimaryMenuRow.Text>
                   </PrimaryMenuRow>
                 </Box>
@@ -171,7 +173,7 @@ export const MenuDropdown = () => {
                     <GovernanceIcon width={24} height={24} color={theme.textPrimary} />
                   </Icon>
                   <PrimaryMenuRow.Text>
-                    <Trans>Vote in governance</Trans>
+                    <Trans>Vote</Trans>
                   </PrimaryMenuRow.Text>
                 </PrimaryMenuRow>
                 <PrimaryMenuRow href="https://info.uniswap.org/#/">
@@ -179,7 +181,7 @@ export const MenuDropdown = () => {
                     <BarChartIcon width={24} height={24} color={theme.textPrimary} />
                   </Icon>
                   <PrimaryMenuRow.Text>
-                    <Trans>View more analytics</Trans>
+                    <Trans>Analytics</Trans>
                   </PrimaryMenuRow.Text>
                 </PrimaryMenuRow>
               </Column>
@@ -197,9 +199,6 @@ export const MenuDropdown = () => {
                 <SecondaryLinkedText href="https://docs.uniswap.org/">
                   <Trans>Documentation</Trans> ↗
                 </SecondaryLinkedText>
-                <SecondaryLinkedText href="https://uniswap.canny.io/feature-requests">
-                  <Trans>Feedback</Trans> ↗
-                </SecondaryLinkedText>
                 <SecondaryLinkedText
                   onClick={() => {
                     toggleOpen()
@@ -208,22 +207,22 @@ export const MenuDropdown = () => {
                 >
                   <Trans>Legal & Privacy</Trans> ↗
                 </SecondaryLinkedText>
-                {(isDevelopmentEnv() || isStagingEnv()) && (
+                {/* {(isDevelopmentEnv() || isStagingEnv()) && (
                   <SecondaryLinkedText onClick={openFeatureFlagsModal}>
                     <Trans>Feature Flags</Trans>
                   </SecondaryLinkedText>
-                )}
+                )} */}
               </Box>
               <IconRow>
-                <Icon href="https://discord.com/invite/FCfyBSbCU5">
-                  <DiscordIconMenu
+                <Icon href="https://t.me/sukiswapcom">
+                  <TelegramIconMenu
                     className={styles.hover}
                     width={24}
                     height={24}
                     color={themeVars.colors.textSecondary}
                   />
                 </Icon>
-                <Icon href="https://twitter.com/Uniswap">
+                <Icon href="https://twitter.com/sukiswapcom">
                   <TwitterIconMenu
                     className={styles.hover}
                     width={24}
@@ -231,8 +230,16 @@ export const MenuDropdown = () => {
                     color={themeVars.colors.textSecondary}
                   />
                 </Icon>
-                <Icon href="https://github.com/Uniswap">
+                <Icon href="https://github.com/sukiswap">
                   <GithubIconMenu
+                    className={styles.hover}
+                    width={24}
+                    height={24}
+                    color={themeVars.colors.textSecondary}
+                  />
+                </Icon>
+                <Icon href="">
+                  <DiscordIconMenu
                     className={styles.hover}
                     width={24}
                     height={24}
@@ -245,7 +252,7 @@ export const MenuDropdown = () => {
         )}
       </Box>
       <PrivacyPolicyModal />
-      <FeatureFlagModal />
+      {/*<FeatureFlagModal />*/}
     </>
   )
 }
