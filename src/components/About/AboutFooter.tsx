@@ -5,9 +5,9 @@ import styled from 'styled-components'
 import { BREAKPOINTS, ExternalLink, StyledRouterLink } from 'theme'
 import { useIsDarkMode } from 'theme/components/ThemeToggle'
 
-import { DiscordIcon, GithubIcon, TwitterIcon } from './Icons'
-import darkUnicornImgSrc from './images/unicornEmbossDark.png'
-import lightUnicornImgSrc from './images/unicornEmbossLight.png'
+import { GithubIcon, TelegramIcon, TwitterIcon } from './Icons'
+import darkUnicornImgSrc from './images/suki-logo.png'
+import lightUnicornImgSrc from './images/suki-logo.png'
 
 const Footer = styled.div`
   display: flex;
@@ -114,25 +114,19 @@ const LogoSectionContent = () => {
   const isDarkMode = useIsDarkMode()
   return (
     <>
-      <StyledLogo src={isDarkMode ? darkUnicornImgSrc : lightUnicornImgSrc} alt="Uniswap Logo" />
+      <StyledLogo src={isDarkMode ? darkUnicornImgSrc : lightUnicornImgSrc} alt="Sukiswap Logo" />
       <SocialLinks>
-        <SocialLink href="https://discord.gg/FCfyBSbCU5" target="_blank" rel="noopener noreferrer">
-          <DiscordIcon size={32} />
+        <SocialLink href="https://t.me/sukiswapcom" target="_blank" rel="noopener noreferrer">
+          <TelegramIcon size={32} />
         </SocialLink>
-        <TraceEvent
-          events={[BrowserEvent.onClick]}
-          name={SharedEventName.ELEMENT_CLICKED}
-          element={InterfaceElementName.TWITTER_LINK}
-        >
-          <SocialLink href="https://twitter.com/uniswap" target="_blank" rel="noopener noreferrer">
-            <TwitterIcon size={32} />
-          </SocialLink>
-        </TraceEvent>
-        <SocialLink href="https://github.com/Uniswap" target="_blank" rel="noopener noreferrer">
+        <SocialLink href="https://twitter.com/sukiswapcom" target="_blank" rel="noopener noreferrer">
+          <TwitterIcon size={32} />
+        </SocialLink>
+        <SocialLink href="https://github.com/sukiswap" target="_blank" rel="noopener noreferrer">
           <GithubIcon size={32} />
         </SocialLink>
       </SocialLinks>
-      <Copyright>© {new Date().getFullYear()} Uniswap Labs</Copyright>
+      <Copyright>© {new Date().getFullYear()} Sukiswap Labs</Copyright>
     </>
   )
 }
@@ -155,11 +149,11 @@ export const AboutFooter = () => {
         </LinkGroup>
         <LinkGroup>
           <LinkGroupTitle>Protocol</LinkGroupTitle>
-          <ExternalTextLink href="https://uniswap.org/community">Community</ExternalTextLink>
-          <ExternalTextLink href="https://uniswap.org/governance">Governance</ExternalTextLink>
-          <ExternalTextLink href="https://uniswap.org/developers">Developers</ExternalTextLink>
+          <ExternalTextLink href="https://opbnb-bridge.bnbchain.org/">Bridge</ExternalTextLink>
+          <ExternalTextLink href="/vote">Governance</ExternalTextLink>
+          <ExternalTextLink href="https://github.com/sukiswap">Developers</ExternalTextLink>
         </LinkGroup>
-        <LinkGroup>
+        {/* <LinkGroup>
           <LinkGroupTitle>Company</LinkGroupTitle>
           <TraceEvent
             events={[BrowserEvent.onClick]}
@@ -175,7 +169,7 @@ export const AboutFooter = () => {
           >
             <ExternalTextLink href="https://uniswap.org/blog">Blog</ExternalTextLink>
           </TraceEvent>
-        </LinkGroup>
+        </LinkGroup> */}
         <LinkGroup>
           <LinkGroupTitle>Get Help</LinkGroupTitle>
           <TraceEvent
@@ -183,11 +177,7 @@ export const AboutFooter = () => {
             name={SharedEventName.ELEMENT_CLICKED}
             element={InterfaceElementName.SUPPORT_LINK}
           >
-            <ExternalTextLink
-              href="https://support.uniswap.org/hc/en-us/requests/new"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+            <ExternalTextLink href="mailto:info@sukiswap.com" target="_blank" rel="noopener noreferrer">
               Contact Us
             </ExternalTextLink>
           </TraceEvent>
@@ -196,7 +186,7 @@ export const AboutFooter = () => {
             name={SharedEventName.ELEMENT_CLICKED}
             element={InterfaceElementName.SUPPORT_LINK}
           >
-            <ExternalTextLink href="https://support.uniswap.org/hc/en-us">Help Center</ExternalTextLink>
+            <ExternalTextLink href="https://t.me/sukiswapcom">Help Center</ExternalTextLink>
           </TraceEvent>
         </LinkGroup>
       </FooterLinks>

@@ -22,7 +22,7 @@ const SweepContainer = styled.div`
   justify-content: space-between;
   background: linear-gradient(${({ theme }) => theme.backgroundSurface}, ${({ theme }) => theme.backgroundSurface})
       padding-box,
-    linear-gradient(to right, #4673fa, #9646fa) border-box;
+    linear-gradient(to right, #2794AA, #0BA878) border-box;
   border: 2px solid transparent;
 `
 
@@ -381,13 +381,13 @@ export const Sweep = ({ contractAddress, minPrice, maxPrice }: SweepProps) => {
             trackStyle={{
               top: '3px',
               height: '8px',
-              background: `radial-gradient(101.8% 4091.31% at 0% 0%, #4673FA 0%, #9646FA 100%)`,
+              background: `radial-gradient(101.8% 4091.31% at 0% 0%, #2794AA 0%, #0BA878 100%)`,
             }}
             handleStyle={{
               top: '3px',
               width: '12px',
               height: '20px',
-              backgroundColor: `#4673FA`, //This is a custom color to align with the gradient on sweep - we may want to systematize it eventually
+              backgroundColor: `#2794AA`, //This is a custom color to align with the gradient on sweep - we may want to systematize it eventually
               borderRadius: '4px',
               border: 'none',
               opacity: '1',

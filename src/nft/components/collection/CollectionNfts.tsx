@@ -135,7 +135,7 @@ const SweepButton = styled.div<{ toggled: boolean; disabled?: boolean }>`
   color: ${({ toggled, disabled, theme }) => (toggled && !disabled ? theme.accentTextLightPrimary : theme.textPrimary)};
   background: ${({ theme, toggled, disabled }) =>
     !disabled && toggled
-      ? 'radial-gradient(101.8% 4091.31% at 0% 0%, #4673FA 0%, #9646FA 100%)'
+      ? 'radial-gradient(101.8% 4091.31% at 0% 0%, #2794AA 0%, #0BA878 100%)'
       : theme.backgroundInteractive};
   opacity: ${({ disabled }) => (disabled ? 0.4 : 1)};
   :hover {

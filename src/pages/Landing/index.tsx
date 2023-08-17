@@ -2,12 +2,14 @@ import { Trans } from '@lingui/macro'
 import { BrowserEvent, InterfaceElementName, InterfacePageName, SharedEventName } from '@uniswap/analytics-events'
 import { Trace, TraceEvent } from 'analytics'
 import { AboutFooter } from 'components/About/AboutFooter'
+// import BridgeSection from 'components/About/BridgeSection'
 import Card, { CardType } from 'components/About/Card'
 import { MAIN_CARDS, MORE_CARDS } from 'components/About/constants'
 import ProtocolBanner from 'components/About/ProtocolBanner'
+// import SupportSection from 'components/About/SupportSection'
 import { useAccountDrawer } from 'components/AccountDrawer'
 import { BaseButton } from 'components/Button'
-import { AppleLogo } from 'components/Logo/AppleLogo'
+// import { AppleLogo } from 'components/Logo/AppleLogo'
 import { useDisableNFTRoutes } from 'hooks/useDisableNFTRoutes'
 import Swap from 'pages/Swap'
 import { RedirectPathToSwapOnly } from 'pages/Swap/redirects'
@@ -22,7 +24,7 @@ import { BREAKPOINTS } from 'theme'
 import { useIsDarkMode } from 'theme/components/ThemeToggle'
 import { TRANSITION_DURATIONS } from 'theme/styles'
 import { Z_INDEX } from 'theme/zIndex'
-import { getDownloadAppLinkProps } from 'utils/openDownloadApp'
+// import { getDownloadAppLinkProps } from 'utils/openDownloadApp'
 
 const PageContainer = styled.div`
   position: absolute;
@@ -80,7 +82,7 @@ const Glow = styled.div`
   position: absolute;
   top: 68px;
   bottom: 0;
-  background: radial-gradient(72.04% 72.04% at 50% 3.99%, #ff37eb 0%, rgba(166, 151, 255, 0) 100%);
+  background: radial-gradient(72.04% 72.04% at 50% 3.99%, #1dba89 0%, rgba(166, 151, 255, 0) 100%);
   filter: blur(72px);
   border-radius: 24px;
   max-width: 480px;
@@ -117,10 +119,10 @@ const TitleText = styled.h1<{ isDarkMode: boolean }>`
   ${({ isDarkMode }) =>
     isDarkMode
       ? css`
-          background: linear-gradient(20deg, rgba(255, 244, 207, 1) 10%, rgba(255, 87, 218, 1) 100%);
+          background: linear-gradient(20deg, rgba(104, 144, 155, 1) 10%, rgba(0, 156, 109, 1) 100%);
         `
       : css`
-          background: linear-gradient(10deg, rgba(255, 79, 184, 1) 0%, rgba(255, 159, 251, 1) 100%);
+          background: linear-gradient(10deg, rgba(37, 200, 151, 1) 0%, rgba(114, 221, 189, 1) 100%);
         `};
   background-clip: text;
   -webkit-background-clip: text;
@@ -162,13 +164,13 @@ const LandingButton = styled(BaseButton)`
 `
 
 const ButtonCTA = styled(LandingButton)`
-  background: linear-gradient(93.06deg, #ff00c7 2.66%, #ff9ffb 98.99%);
+  background: linear-gradient(93.06deg, #0bb481 2.66%, #6a83ff 98.99%);
   border: none;
   color: ${({ theme }) => theme.white};
   transition: ${({ theme }) => `all ${theme.transition.duration.medium} ${theme.transition.timing.ease}`};
 
   &:hover {
-    box-shadow: 0px 0px 16px 0px #ff00c7;
+    box-shadow: 0px 0px 16px 0px #0bb481;
   }
 `
 
@@ -224,7 +226,7 @@ const AboutContentContainer = styled.div<{ isDarkMode: boolean }>`
   ${({ isDarkMode }) =>
     isDarkMode
       ? css`
-          background: linear-gradient(179.82deg, rgba(0, 0, 0, 0) 0.16%, #050026 99.85%);
+          background: linear-gradient(179.82deg, rgba(0, 0, 0, 0) 0.16%, #090813 99.85%);
         `
       : css`
           background: linear-gradient(179.82deg, rgba(255, 255, 255, 0) 0.16%, #eaeaea 99.85%);
@@ -381,7 +383,7 @@ export default function Landing() {
             <LearnMoreArrow />
           </LearnMoreContainer>
 
-          <DownloadWalletLink
+          {/* <DownloadWalletLink
             {...getDownloadAppLinkProps({
               // landing page specific tracking params
               microSiteParams: `utm_source=home_page&utm_medium=webapp&utm_campaign=wallet_microsite&utm_id=1`,
@@ -389,8 +391,8 @@ export default function Landing() {
             })}
           >
             <AppleLogo width="20" height="20" />
-            Download the Uniswap Wallet for iOS
-          </DownloadWalletLink>
+            Download the Sukiswap Wallet for iOS
+          </DownloadWalletLink> */}
         </ContentContainer>
         <AboutContentContainer isDarkMode={isDarkMode}>
           <CardGrid cols={cards.length} ref={cardsRef}>
@@ -407,6 +409,8 @@ export default function Landing() {
               <Card {...card} icon={isDarkMode ? darkIcon : lightIcon} key={card.title} type={CardType.Secondary} />
             ))}
           </CardGrid>
+          {/* <BridgeSection />
+          <SupportSection /> */}
           <ProtocolBanner />
           <AboutFooter />
         </AboutContentContainer>
@@ -415,17 +419,17 @@ export default function Landing() {
   )
 }
 
-const DownloadWalletLink = styled.a`
-  display: inline-flex;
-  gap: 8px;
-  color: ${({ theme }) => theme.textSecondary};
-  text-decoration: none;
-  font-size: 16px;
-  line-height: 24px;
-  font-weight: 500;
-  text-align: center;
+// const DownloadWalletLink = styled.a`
+//   display: inline-flex;
+//   gap: 8px;
+//   color: ${({ theme }) => theme.textSecondary};
+//   text-decoration: none;
+//   font-size: 16px;
+//   line-height: 24px;
+//   font-weight: 500;
+//   text-align: center;
 
-  :hover {
-    color: ${({ theme }) => theme.textTertiary};
-  }
-`
+//   :hover {
+//     color: ${({ theme }) => theme.textTertiary};
+//   }
+// `

@@ -1,5 +1,5 @@
 import { t, Trans } from '@lingui/macro'
-import { InterfaceElementName } from '@uniswap/analytics-events'
+// import { InterfaceElementName } from '@uniswap/analytics-events'
 // import FeatureFlagModal from 'components/FeatureFlagModal/FeatureFlagModal'
 import { PrivacyPolicyModal } from 'components/PrivacyPolicy'
 import { useOnClickOutside } from 'hooks/useOnClickOutside'
@@ -8,7 +8,6 @@ import { Column, Row } from 'nft/components/Flex'
 import {
   BarChartIcon,
   BridgeIcon,
-  DiscordIconMenu,
   EllipsisIcon,
   GithubIconMenu,
   GovernanceIcon,
@@ -22,9 +21,9 @@ import { ReactNode, useReducer, useRef } from 'react'
 import { NavLink, NavLinkProps } from 'react-router-dom'
 import { useToggleModal } from 'state/application/hooks'
 import styled, { useTheme } from 'styled-components'
-// import { isDevelopmentEnv, isStagingEnv } from 'utils/env'
-import { openDownloadApp } from 'utils/openDownloadApp'
 
+// import { isDevelopmentEnv, isStagingEnv } from 'utils/env'
+// import { openDownloadApp } from 'utils/openDownloadApp'
 // import { ReactComponent as AppleLogo } from '../../assets/svg/apple_logo.svg'
 import { ApplicationModal } from '../../state/application/reducer'
 import * as styles from './MenuDropdown.css'
@@ -152,14 +151,8 @@ export const MenuDropdown = () => {
                     </PrimaryMenuRow.Text>
                   </PrimaryMenuRow>
                 </Box>
-                <Box
-                  onClick={() =>
-                    openDownloadApp({
-                      element: InterfaceElementName.UNISWAP_WALLET_MODAL_DOWNLOAD_BUTTON,
-                    })
-                  }
-                >
-                  <PrimaryMenuRow close={toggleOpen}>
+                <Box>
+                  <PrimaryMenuRow href="https://opbnb-bridge.bnbchain.org/" close={toggleOpen}>
                     <Icon>
                       <BridgeIcon width="24px" height="24px" fill={theme.textPrimary} />
                     </Icon>
@@ -176,7 +169,7 @@ export const MenuDropdown = () => {
                     <Trans>Vote</Trans>
                   </PrimaryMenuRow.Text>
                 </PrimaryMenuRow>
-                <PrimaryMenuRow href="https://info.uniswap.org/#/">
+                <PrimaryMenuRow href="https://info.sukiswap.com/#/">
                   <Icon>
                     <BarChartIcon width={24} height={24} color={theme.textPrimary} />
                   </Icon>
@@ -193,10 +186,10 @@ export const MenuDropdown = () => {
                 alignItems={{ sm: 'center', md: 'flex-start' }}
                 paddingX="8"
               >
-                <SecondaryLinkedText href="https://help.uniswap.org/en/">
+                <SecondaryLinkedText href="https://t.me/sukiswapcom/">
                   <Trans>Help center</Trans> ↗
                 </SecondaryLinkedText>
-                <SecondaryLinkedText href="https://docs.uniswap.org/">
+                <SecondaryLinkedText href="https://docs.sukiswap.com/">
                   <Trans>Documentation</Trans> ↗
                 </SecondaryLinkedText>
                 <SecondaryLinkedText
@@ -232,14 +225,6 @@ export const MenuDropdown = () => {
                 </Icon>
                 <Icon href="https://github.com/sukiswap">
                   <GithubIconMenu
-                    className={styles.hover}
-                    width={24}
-                    height={24}
-                    color={themeVars.colors.textSecondary}
-                  />
-                </Icon>
-                <Icon href="">
-                  <DiscordIconMenu
                     className={styles.hover}
                     width={24}
                     height={24}
