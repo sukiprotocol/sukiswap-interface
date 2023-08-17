@@ -60,7 +60,7 @@ export const MORE_CARDS = [
     elementName: InterfaceElementName.ABOUT_PAGE_EARN_CARD,
   },
   {
-    to: 'https://github.com/sukiswapcom',
+    to: 'https://github.com/sukiswap',
     external: true,
     title: 'Build dApps',
     description: 'Build apps and tools on the largest DeFi protocol on Ethereum.',

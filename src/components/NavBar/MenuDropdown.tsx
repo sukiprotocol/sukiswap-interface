@@ -19,13 +19,13 @@ import { body, bodySmall } from 'nft/css/common.css'
 import { themeVars } from 'nft/css/sprinkles.css'
 import { ReactNode, useReducer, useRef } from 'react'
 import { NavLink, NavLinkProps } from 'react-router-dom'
-import { useToggleModal } from 'state/application/hooks'
+// import { useToggleModal } from 'state/application/hooks'
 import styled, { useTheme } from 'styled-components'
 
 // import { isDevelopmentEnv, isStagingEnv } from 'utils/env'
 // import { openDownloadApp } from 'utils/openDownloadApp'
 // import { ReactComponent as AppleLogo } from '../../assets/svg/apple_logo.svg'
-import { ApplicationModal } from '../../state/application/reducer'
+// import { ApplicationModal } from '../../state/application/reducer'
 import * as styles from './MenuDropdown.css'
 import { NavDropdown } from './NavDropdown'
 import { NavIcon } from './NavIcon'
@@ -125,7 +125,7 @@ const Icon = ({ href, children }: { href?: string; children: ReactNode }) => {
 export const MenuDropdown = () => {
   const theme = useTheme()
   const [isOpen, toggleOpen] = useReducer((s) => !s, false)
-  const togglePrivacyPolicy = useToggleModal(ApplicationModal.PRIVACY_POLICY)
+  // const togglePrivacyPolicy = useToggleModal(ApplicationModal.PRIVACY_POLICY)
   // const openFeatureFlagsModal = useToggleModal(ApplicationModal.FEATURE_FLAGS)
   const ref = useRef<HTMLDivElement>(null)
   useOnClickOutside(ref, isOpen ? toggleOpen : undefined)
@@ -187,12 +187,12 @@ export const MenuDropdown = () => {
                 paddingX="8"
               >
                 <SecondaryLinkedText href="https://t.me/sukiswapcom/">
-                  <Trans>Help center</Trans> ↗
+                  <Trans>Help</Trans> ↗
                 </SecondaryLinkedText>
                 <SecondaryLinkedText href="https://docs.sukiswap.com/">
-                  <Trans>Documentation</Trans> ↗
+                  <Trans>Docs</Trans> ↗
                 </SecondaryLinkedText>
-                <SecondaryLinkedText
+                {/* <SecondaryLinkedText
                   onClick={() => {
                     toggleOpen()
                     togglePrivacyPolicy()
@@ -200,7 +200,7 @@ export const MenuDropdown = () => {
                 >
                   <Trans>Legal & Privacy</Trans> ↗
                 </SecondaryLinkedText>
-                {/* {(isDevelopmentEnv() || isStagingEnv()) && (
+                {(isDevelopmentEnv() || isStagingEnv()) && (
                   <SecondaryLinkedText onClick={openFeatureFlagsModal}>
                     <Trans>Feature Flags</Trans>
                   </SecondaryLinkedText>
